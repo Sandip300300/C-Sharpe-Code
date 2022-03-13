@@ -1,0 +1,212 @@
+**********Polymorphism************
+using System;
+public class Employee
+{
+    public string FirstName="FN";
+    public string LastName="LN";
+   
+
+    public virtual void PrintFullName()
+    {
+        Console.WriteLine(FirstName+" "+LastName);
+    }
+
+
+}
+public class PartTimeEmloyee : Employee
+{
+    public override void PrintFullName()
+    {
+        Console.WriteLine(FirstName + " " + LastName+"-Part Time");
+    }
+
+}
+public class FullTimeEmloyee : Employee
+{
+
+    public override void PrintFullName()
+    {
+        Console.WriteLine(FirstName + " " + LastName+"-Full Time");
+    }
+}
+
+public class TemporaryTimeEmloyee : Employee
+{
+
+    public override void PrintFullName()
+    {
+        Console.WriteLine(FirstName + " " + LastName+ "-Temporary");
+    }
+}
+
+
+
+
+class Program
+{
+    public static void Main()
+    {
+        Employee[] employee = new Employee[4];
+        employee[0]=new Employee();
+        employee[1] = new PartTimeEmloyee();
+        employee[2] = new FullTimeEmloyee();
+        employee[3] = new TemporaryTimeEmloyee();
+
+        foreach(Employee e in employee)
+        {
+            e.PrintFullName();
+            
+        }
+
+
+    }
+   
+}
+
+******Properties********
+
+
+using System;
+public class Student
+{
+    private int _id;
+    private string _name;
+    private int _passmark = 35;
+
+    public int GetPassMark()
+    {
+        return this._passmark;
+    }
+
+
+    public void SetName(string Name)
+    {
+        if(string.IsNullOrEmpty(Name))
+        {
+            throw new Exception("Name can not be empty");
+        }
+        this._name = Name;
+    }
+    public string GetName()
+    {
+        if(string.IsNullOrEmpty(this._name))
+        {
+            return "No _Name";
+        }
+        else
+        {
+            return this._name;
+        }
+    }
+    public void SetID(int Id)
+    {
+        if(Id<=0)
+        {
+            throw new Exception("Student ID Can Not Be negetive");
+        }
+        this._id = Id;
+
+    }
+    public int GetID()
+    {
+        return this._id;
+    }
+
+
+}
+
+class Program
+{
+    public static void Main()
+    {
+       Student S1=new Student();
+        S1.SetID(1);
+        S1.SetName("Sandip");
+        Console.WriteLine(S1.GetID());
+        Console.WriteLine(S1.GetName());
+        Console.WriteLine(S1.GetPassMark());
+    }
+   
+}
+
+
+
+
+
+*********Properties ********
+
+
+using System;
+public class Student
+{
+    private int _id;
+    private string _name;
+    private int _passmark = 35;
+
+    public int PassMark
+    {
+        get { return _passmark; }
+       
+    }
+
+
+    public string Name
+    {
+        set
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                throw new Exception("Name can not be empty");
+            }
+            this._name = value;
+        }
+        get
+        {
+            if (string.IsNullOrEmpty(this._name))
+            {
+                return "No Name";
+            }
+            else
+            {
+                return this._name;
+            }
+
+        }
+        
+    }
+   
+    public int Id
+    {
+        set
+        {
+            if (value <= 0)
+            {
+                throw new Exception("Student ID Can Not Be negetive");
+            }
+            this._id = value;
+
+        }
+        get
+        {
+            return this._id;
+        }
+
+
+    }
+    
+
+}
+
+class Program
+{
+    public static void Main()
+    {
+      Student s1= new Student();
+        s1.Id = 1;
+        Console.WriteLine(s1.Id);
+        Console.WriteLine(s1.Name);
+        Console.WriteLine(s1.PassMark);
+    }
+   
+}
+
