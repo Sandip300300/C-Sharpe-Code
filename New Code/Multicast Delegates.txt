@@ -1,0 +1,28 @@
+using System;
+
+namespace Practice_Project
+{
+
+    public delegate void RectDelegate(double Width, double Height);
+    public  class Program
+    {
+       public void GetArea(double Width,double Height)
+        {
+            Console.WriteLine(Width * Height);
+
+        }
+        public void GetPerimeter(double Width, double Height)
+        {
+            Console.WriteLine(2*(Width + Height));
+
+        }
+
+        static void Main(string[] args)
+        {
+            Program rect=new Program();
+            RectDelegate obj = rect.GetArea;
+            obj+=rect.GetPerimeter;
+            obj.Invoke(12.34, 56.78);
+        }
+    }
+}

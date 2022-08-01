@@ -1,0 +1,199 @@
+using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.Text;
+using System.Threading;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Practice_Project
+{
+   public class Employee
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+
+        public string Job { get; set; }
+
+        public double Salary { get; set; }
+       
+        
+    }
+    //public class Organization
+    //{
+    //    List<Employee> Emps=new List<Employee>();
+    //    public void Add(Employee Emp)
+    //    {
+    //        Emps.Add(Emp);
+
+    //    }
+    //}
+    
+    class Anonymous
+    {
+       
+       
+        static void Main(string[] args)
+        {
+           List<Employee> employees=new List<Employee>();   
+            employees.Add(new Employee { Id = 101, Name ="Sandip", Job="It Engineer", Salary=25000});
+            employees.Add(new Employee { Id = 102, Name = "Misrty", Job = "Software Engineer", Salary = 50000 });
+            employees.Add(new Employee { Id = 103, Name = "Mehghla", Job = "Nurse", Salary = 5000 });
+            foreach (Employee emp in employees)
+            {
+                Console.WriteLine(emp.Id + " " + emp.Name + " " + emp.Job + " " + emp.Salary);
+            }
+        }
+    }
+}
+#############
+using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.Text;
+using System.Threading;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Practice_Project
+{
+   public class Employee
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+
+        public string Job { get; set; }
+
+        public double Salary { get; set; }
+       
+        
+    }
+    public class Organization:IEnumerable
+    {
+        List<Employee> Emps = new List<Employee>();
+        public void Add(Employee Emp)
+        {
+            Emps.Add(Emp);
+
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            return Emps.GetEnumerator();
+        }
+    }
+
+    class Anonymous
+    {
+       
+       
+        static void Main(string[] args)
+        {
+            Organization employees = new Organization();
+            employees.Add(new Employee { Id = 101, Name ="Sandip", Job="It Engineer", Salary=25000});
+            employees.Add(new Employee { Id = 102, Name = "Misrty", Job = "Software Engineer", Salary = 50000 });
+            employees.Add(new Employee { Id = 103, Name = "Mehghla", Job = "Nurse", Salary = 5000 });
+            foreach (Employee emp in employees)
+            {
+                Console.WriteLine(emp.Id + " " + emp.Name + " " + emp.Job + " " + emp.Salary);
+            }
+        }
+    }
+}
+#########
+using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.Text;
+using System.Threading;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Practice_Project
+{
+   public class Employee
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+
+        public string Job { get; set; }
+
+        public double Salary { get; set; }
+       
+        
+    }
+    public class Organization:IEnumerable
+    {
+        List<Employee> Emps = new List<Employee>();
+        public void Add(Employee Emp)
+        {
+            Emps.Add(Emp);
+
+        }
+        public int Count
+        {
+            get { return Emps.Count; }
+        }
+        public Employee this[int index]
+        {
+            get
+            {
+                return Emps[index];
+            }
+        }
+        public IEnumerator GetEnumerator()
+        {
+            return new OrganizationEnumerator(this);
+        }
+    }
+    public class OrganizationEnumerator : IEnumerator
+    {
+        Organization OrgCOll;
+        int CurrentIndex;
+        Employee CurrentEmployee;
+        public OrganizationEnumerator(Organization orgCOll)
+        {
+            OrgCOll = orgCOll;
+            CurrentIndex = -1;
+
+
+        }
+
+        public object Current
+        {
+            get
+            {
+                return CurrentEmployee;
+            }
+        }
+
+        public bool MoveNext()
+        {
+            if (++CurrentIndex >= OrgCOll.Count)
+                return false;
+            else
+                CurrentEmployee = OrgCOll[CurrentIndex];
+            return true;
+        }
+
+        public void Reset()
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    class Anonymous
+    {
+       
+       
+        static void Main(string[] args)
+        {
+            Organization employees = new Organization();
+            employees.Add(new Employee { Id = 101, Name ="Sandip", Job="It Engineer", Salary=25000});
+            employees.Add(new Employee { Id = 102, Name = "Misrty", Job = "Software Engineer", Salary = 50000 });
+            employees.Add(new Employee { Id = 103, Name = "Mehghla", Job = "Nurse", Salary = 5000 });
+            foreach (Employee emp in employees)
+            {
+                Console.WriteLine(emp.Id + " " + emp.Name + " " + emp.Job + " " + emp.Salary);
+            }
+        }
+    }
+}
+

@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.Text;
+using System.Threading;
+
+namespace Practice_Project
+{
+   public class Customer{
+
+        public int CustID { get; set; }
+        public string Name { get; set; }
+        public string City { get; set; }
+        public double Balance { get; set; }
+    }
+
+
+    class Anonymous
+    {
+       
+        static void Main(string[] args)
+        {
+
+            List<Customer> customers = new List<Customer>();
+            Customer c1 = new Customer { CustID = 101, Name = "Sandip", Balance = 2000, City = "Dhaka" };
+            Customer c2 = new Customer { CustID = 102, Name = "Mistry", Balance = 3000, City = "Khulna" };
+            Customer c3 = new Customer { CustID = 103, Name = "Meghla", Balance = 4000, City = "Barisal" };
+            Customer c4 = new Customer { CustID = 104, Name = "Mazumder", Balance = 5000, City = "Bagerhat" };
+
+            customers.Add(c1);
+            customers.Add(c2);
+            customers.Add(c3);
+            customers.Add(c4);
+           
+            foreach(Customer obj in customers)
+            {
+                Console.WriteLine(obj.CustID+" "+obj.City+" "+obj.Name+" "+obj.Balance);
+            }
+        }
+    }
+}

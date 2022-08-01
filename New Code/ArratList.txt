@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.Text;
+using System.Threading;
+
+namespace Practice_Project
+{
+    
+    class Anonymous
+    {
+       
+        static void Main(string[] args)
+        {
+
+
+            ArrayList al = new ArrayList();
+            Console.WriteLine(al.Capacity);
+            al.Add(100);
+            Console.WriteLine(al.Capacity);
+            al.Add(200);al.Add(300);al.Add(400);
+            Console.WriteLine(al.Capacity);
+            foreach (object obj in al)
+            {
+                Console.WriteLine(obj + " ");
+            }
+            al.Insert(3, 350);
+            foreach (object obj in al)
+            {
+                Console.WriteLine(obj + " //");
+            }
+            al.Remove(300);
+            foreach (object obj in al)
+            {
+                Console.WriteLine(obj + " //");
+            }
+        }
+    }
+}

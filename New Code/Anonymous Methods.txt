@@ -1,0 +1,20 @@
+using System;
+
+namespace Practice_Project
+{
+
+   public delegate string GreetingDelegate(string text);
+    public  class Program
+    {
+      
+        static void Main(string[] args)
+        {
+            GreetingDelegate obj = delegate (string name)
+            {
+                return "Hello " + name + " a very good morning";
+            };
+            string str = obj.Invoke("Sandip Mistry");
+            Console.WriteLine(str);
+        }
+    }
+}

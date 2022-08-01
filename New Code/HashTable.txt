@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.Text;
+using System.Threading;
+
+namespace Practice_Project
+{
+    
+    class Anonymous
+    {
+       
+        static void Main(string[] args)
+        {
+            Hashtable ht = new Hashtable();
+            ht.Add("ID",100);
+            ht.Add("Name","Sandip Mistry");
+            ht.Add("Job","Software Developer");
+            ht.Add("Phone",123456);
+            ht.Add("Salary",20000);
+          //  Console.WriteLine(ht["ID"]);
+          foreach(object key in ht.Keys)
+            {
+                Console.WriteLine(key+": "+ht[key]);
+            }
+
+        }
+    }
+}

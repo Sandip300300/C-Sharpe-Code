@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.Text;
+using System.Threading;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Practice_Project
+{
+   public class Student
+    {
+
+        public int SID { get; set; }
+        public string SName { get; set; }
+        public string Class { get; set; }
+        public double Marks { get; set; }
+
+        
+    }
+
+    
+    class Anonymous
+    {
+        public static int CompareToNames(Student s1,Student s2)
+        {
+            return s1.SName.CompareTo(s2.SName);
+        }
+       
+        static void Main(string[] args)
+        {
+            Student s1 = new Student { SID = 101, SName = "Sandip", Class = "10", Marks = 88 };
+            Student s2 = new Student { SID = 105, SName = "Mistry", Class = "9", Marks = 98 };
+            Student s3 = new Student { SID = 102, SName = "Meghla", Class = "8", Marks = 78 };
+            Student s4 = new Student { SID = 103, SName = "Mazumder", Class = "7", Marks = 68 };
+            Student s5 = new Student { SID = 103, SName = "A", Class = "7", Marks = 68 };
+            List<Student> students = new List<Student>() { s1,s2,s3,s4,s5};
+
+            Comparison<Student> obj = new Comparison<Student>(CompareToNames);
+            students.Sort(obj);
+            //Annonums Method
+            foreach (Student s in students)
+            {
+                Console.WriteLine(s.SID + " " + " " + s.SName + " " + s.Marks + " " + s.Class);
+            }
+        }
+    }
+}

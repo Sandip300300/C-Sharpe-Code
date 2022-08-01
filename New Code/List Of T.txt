@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.Text;
+using System.Threading;
+
+namespace Practice_Project
+{
+    
+    class Anonymous
+    {
+       
+        static void Main(string[] args)
+        {
+            List<int> li = new List<int>();
+            li.Add(100);li.Add(300);
+            li.Add(500);
+            foreach(int key in li)
+            {
+                Console.Write(key+" ");
+            }
+        }
+    }
+}

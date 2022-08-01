@@ -1,0 +1,80 @@
+using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.Text;
+using System.Threading;
+
+namespace Practice_Project
+{
+    
+    
+    class Anonymous
+    {
+        public bool Compare<T>(T a, T b)
+        {
+            if (a.Equals(b))
+                return true;
+            return false;
+        }
+        static void Main(string[] args)
+        {
+            Anonymous cm = new Anonymous();
+            bool result = cm.Compare<float>(12.12f, 12.12f);
+            Console.WriteLine(result);
+        }
+    }
+}
+#######
+using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.Text;
+using System.Threading;
+
+namespace Practice_Project
+{
+    public class Generic { 
+    
+    public void Add<T>(T a,T b)
+        {
+            dynamic d1 = a;
+            dynamic d2 = b;
+            Console.WriteLine(d1 + d2);
+        }
+        public void Sub<T>(T a, T b)
+        {
+            dynamic d1 = a;
+            dynamic d2 = b;
+            Console.WriteLine(d1 - d2);
+        }
+        public void Mul<T>(T a, T b)
+        {
+            dynamic d1 = a;
+            dynamic d2 = b;
+            Console.WriteLine(d1 * d2);
+        }
+        public void Div<T>(T a, T b)
+        {
+            dynamic d1 = a;
+            dynamic d2 = b;
+            Console.WriteLine(d1 /d2);
+        }
+    }
+
+
+    class Anonymous
+    {
+       
+        static void Main(string[] args)
+        {
+            Generic obj = new Generic();
+            obj.Add<int>(10, 30);
+            obj.Sub<double>(100.33, 30);
+            obj.Mul<float>(10.55f, 30);
+            obj.Div<float>(100, 30);
+
+
+
+        }
+    }
+}

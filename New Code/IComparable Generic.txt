@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.Text;
+using System.Threading;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Practice_Project
+{
+   public class Student:IComparable<Student>
+    {
+
+        public int SID { get; set; }
+        public string SName { get; set; }
+        public string Class { get; set; }
+        public double Marks { get; set; }
+
+        public int CompareTo( Student other)
+        {
+            if (this.SID > other.SID)
+                return 1;
+            else if (this.SID < other.SID)
+                return -1;
+            else
+                return 0;
+        }
+    }
+
+
+    class Anonymous
+    {
+       
+        static void Main(string[] args)
+        {
+            Student s1 = new Student { SID = 101, SName = "Sandip", Class = "10", Marks = 88 };
+            Student s2 = new Student { SID = 105, SName = "Mistry", Class = "9", Marks = 98 };
+            Student s3 = new Student { SID = 102, SName = "Meghla", Class = "8", Marks = 78 };
+            Student s4 = new Student { SID = 103, SName = "Mazumder", Class = "7", Marks = 68 };
+            List<Student> students = new List<Student>() { s1,s2,s3,s4};
+            students.Sort();
+
+            foreach(Student s in students)
+            {
+                Console.WriteLine(s.SID + " " + " " + s.SName + " " + s.Marks + " " + s.Class);
+            }
+        }
+    }
+}
