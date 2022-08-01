@@ -1,0 +1,55 @@
+using System;
+
+namespace C_Sharpe_Project_Practice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            //Program p = new Program();
+            //p.EvenNumber();
+            //static method
+            // Program.EvenNumber();
+            //parameter
+            //  Program.EvenNumber(10);
+            Program p = new Program();
+            p.Add(10, 20);
+            Console.WriteLine(p.Add(20,30));
+
+
+        }
+        //public void EvenNumber()
+        //{
+        //    int Start = 0;
+        //    while(Start<=20)
+        //    {
+        //        Console.WriteLine(Start);
+        //        Start = Start + 2;
+        //    }
+        //}
+        //Static method
+        //public static void EvenNumber()
+        //{
+        //    int Start = 0;
+        //    while (Start <= 20)
+        //    {
+        //        Console.WriteLine(Start);
+        //        Start = Start + 2;
+        //    }
+        //}
+        public int Add(int Fn,int Sn)
+        {
+            return Fn + Sn;
+        }
+        public static void EvenNumber(int target)
+        {
+            int Start = 0;
+            while (Start <= target)
+            {
+                Console.WriteLine(Start);
+                Start = Start + 2;
+            }
+        }
+    }
+}

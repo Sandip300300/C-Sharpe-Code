@@ -1,0 +1,51 @@
+using System;
+
+namespace C_Sharpe_Project_Practice
+{
+  public  class Employee {
+        public string First_Name="Fn";
+        public string Last_Name="Sn";
+        
+        public virtual  void PrintFullName()
+        {
+            Console.WriteLine(First_Name + " " + Last_Name);
+
+        }
+
+    }
+    public class Part_Time_Employee :Employee
+    {
+        public override void PrintFullName()
+        {
+            Console.WriteLine(First_Name + " " + Last_Name+" Part Time");
+
+        }
+
+    }
+    public class Full_Time_Employee : Employee
+    {
+        public override void PrintFullName()
+        {
+            Console.WriteLine(First_Name + " " + Last_Name+" Full Time");
+
+        }
+    }
+
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Employee[] employee = new Employee[3];
+            employee[0] = new Employee();
+            employee[1] = new Part_Time_Employee();
+            employee[2] = new Full_Time_Employee();
+            foreach(Employee e in employee)
+            {
+                e.PrintFullName();
+            }
+
+        }
+      
+    }
+}

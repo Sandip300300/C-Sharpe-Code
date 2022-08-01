@@ -1,0 +1,37 @@
+using System;
+interface I1
+{
+    void Interfacemethod();
+
+}
+interface I2
+{
+    void Interfacemethod();
+
+}
+
+
+namespace C_Sharpe_Project_Practice
+{
+    
+   
+    class Program :I1,I2
+    {
+        void I1.Interfacemethod()
+        {
+            Console.WriteLine("I1 Interface Method");
+        }
+         void I2.Interfacemethod()
+        {
+            Console.WriteLine("I2 Interface Method");
+        }
+        static void Main(string[] args)
+        {
+            Program P = new Program();
+            ((I1)P).Interfacemethod();
+            ((I2)P).Interfacemethod();
+        }
+       
+    }
+  
+}

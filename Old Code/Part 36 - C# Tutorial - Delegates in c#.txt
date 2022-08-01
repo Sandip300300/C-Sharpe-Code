@@ -1,0 +1,49 @@
+using System;
+public delegate void HelloFromDelegate(string Message);
+
+namespace C_Sharpe_Project_Practice
+{
+    
+   
+    class Program 
+    {
+        static void Main(string[] args)
+        {
+            HelloFromDelegate del = new HelloFromDelegate(Hello);
+            del("This is Sandip Mistry");
+
+            //A delegate is a type safe function pointer
+        }
+        public static void Hello(string strMessage)
+        {
+            Console.WriteLine(strMessage);
+        }
+      
+    }
+}
+##########
+using System;
+
+public delegate void AddDelegate(int x, int y);
+public delegate string SayDelegate(string str);
+class Program
+{
+    public void Addnums(int a,int b)
+    {
+        Console.WriteLine(a + b);
+    }
+   public string SayHello(string name)
+    {
+        return "Hello " + name;
+    }
+    static void Main(string[] args)
+    {
+        Program p = new Program();
+        AddDelegate add = new AddDelegate(p.Addnums);
+        add.Invoke(10, 20);
+        SayDelegate sd = new SayDelegate(p.SayHello);
+        Console.WriteLine(sd.Invoke("Sandip Mistry"));
+
+    }
+   
+}     

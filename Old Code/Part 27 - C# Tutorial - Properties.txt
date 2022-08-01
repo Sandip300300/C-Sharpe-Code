@@ -1,0 +1,79 @@
+using System;
+
+namespace C_Sharpe_Project_Practice
+{
+    public class Student {
+        private int _id;
+        private string _name;
+        private int _passMark = 35;
+
+        public string Email{get;set;}
+        public string City { get; set; }
+        public int value
+        {
+           set
+                {
+                if (value<= 0)
+                {
+                    throw new Exception("Student Id Not Negetive");
+                }
+                this._id = this.value;
+            }
+            get
+            {
+                return this._id;
+            }
+        }
+       
+        public string Name
+        {
+            set{
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("Name Can Not Be Null");
+                }
+                else
+                {
+                    this._name = value;
+
+                }
+            }
+            get
+            {
+                if (string.IsNullOrEmpty(this._name))
+                {
+                    return "No Name";
+                }
+                else
+                {
+                    return this._name;
+                }
+            }
+            
+        }
+       
+        public int PassMark
+        {
+            get
+            {
+                return this._passMark;
+            }
+            
+        }
+    }
+   
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Student c1 = new Student();
+          
+            Console.WriteLine(c1.value=100);
+            Console.WriteLine(c1.PassMark);
+            Console.WriteLine(c1.Name="Sandip Mistry");
+            Console.WriteLine(c1.Email = "Sandip@gmail.com");
+            Console.WriteLine(c1.City = "Dhaka");
+        }
+      
+    }
+}

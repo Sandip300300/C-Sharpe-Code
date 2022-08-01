@@ -1,0 +1,26 @@
+using System;
+
+public abstract class Customer
+{
+    public abstract void Print();
+}
+
+namespace C_Sharpe_Project_Practice
+{
+    
+   
+  public   class Program :Customer
+    {
+        public override void Print()
+        {
+            Console.WriteLine("Print Method");
+        }
+        static void Main(string[] args)
+        {
+            Program P = new Program();
+            P.Print();
+        }
+       
+    }
+  
+}

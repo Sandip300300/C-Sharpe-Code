@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+
+namespace C_Sharpe_Project_Practice
+{
+    
+   
+    class Program 
+    {
+        static void Main(string[] args)
+        {
+            List<Employee> emplist = new List<Employee>();
+            emplist.Add(new Employee() { ID = 101, Name = "Mary", Salary = 5000, Experience = 5 });
+            emplist.Add(new Employee() { ID = 102, Name = "Mike", Salary = 4000, Experience = 4 });
+            emplist.Add(new Employee() { ID = 102, Name = "Jhon", Salary = 3000, Experience = 3 });
+            emplist.Add(new Employee() { ID = 102, Name = "Todd", Salary = 2000, Experience = 2 });
+            Employee.PromoteEmployee(emplist);
+        }
+       
+    }
+    class Employee
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public int Salary { get; set; }
+        public int Experience { get; set; }
+        public static void PromoteEmployee(List<Employee> employeelist)
+        {
+            foreach (Employee employee in employeelist)
+            {
+                if(employee.Experience>=5)
+                {
+                    Console.WriteLine(employee.Name + " Promoted");
+                }
+            }
+        }
+    }
+}

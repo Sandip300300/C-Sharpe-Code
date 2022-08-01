@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Practice_Project
+{
+    
+    public class Employee
+    {
+        int Eno;
+        double slary;
+        string Ename;
+        public Employee(int eno,double sal,string name)
+        {
+            this.Eno = eno;
+            this.slary = sal;
+            this.Ename = name;
+        }
+         
+        public object this[int index]
+        {
+            get
+            {
+                if (index == 0)
+                    return Eno;
+                else if (index == 1)
+                    return slary;
+                else if (index == 2)
+                    return Ename;
+                return null;
+            }
+            set
+            {
+                if (index == 0)
+                    Eno = (int)value;
+                else if (index == 1)
+                    slary = (double)value;
+                else if (index == 2)
+                    Ename = (string)value;
+            }
+        }
+    }
+    class Anonymous
+    {
+       
+        static void Main(string[] args)
+        {
+            Employee emp = new Employee(10, 2000, "Sandip Mistry");
+            Console.WriteLine("Eno: " + emp[0]);
+            Console.WriteLine("Salary: "+ emp[1]);
+            Console.WriteLine("Name: " + emp[2]);
+            emp[2] = "Meghla Mazumder";
+            Console.WriteLine("Name: " + emp[2]);
+
+        }
+    }
+}

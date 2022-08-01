@@ -1,0 +1,67 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Practice_Project
+{
+    public abstract class Figure
+    {
+        public double width, height, radius;
+        public const float pi = 3.14f;
+        public abstract double GetArea();
+    }
+    public class Rectangle:Figure
+    {
+        public Rectangle(double width,double height)
+
+        {
+            this.width = width;
+            this.height = height;
+        }
+
+        public override double GetArea()
+        {
+            return width * height;
+
+        }
+    }
+    public class Circle:Figure
+    {
+        public Circle(double radious)
+        {
+            this.radius = radious;
+        }
+
+        public override double GetArea()
+        {
+            return pi * radius * radius;
+        }
+    }
+   public class Cone:Figure
+    {
+        public Cone(double Radious,double Height)
+        {
+            this.radius = Radious;
+            this.height = Height;
+        }
+
+        public override double GetArea()
+        {
+            return pi * radius * (radius + Math.Sqrt(height * height + radius*radius));
+        }
+    }
+    class Anonymous
+    {
+       
+        static void Main(string[] args)
+        {
+            Rectangle R = new Rectangle(12.67,56.78);
+            Circle C = new Circle(45.67);
+            Cone C2 = new Cone(34.98, 12.98);
+
+            Console.WriteLine(R.GetArea());
+            Console.WriteLine(C.GetArea());
+            Console.WriteLine(C2.GetArea());
+        }
+    }
+}

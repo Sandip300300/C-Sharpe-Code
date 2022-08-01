@@ -1,0 +1,22 @@
+using System;
+
+namespace C_Sharpe_Project_Practice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Console.WriteLine("Please Enter Your Name");
+            //string name = Console.ReadLine();
+            //// Console.WriteLine("Hello : " + name);
+            //Console.WriteLine("Hello : {0}" , name);
+            Console.WriteLine("Please Enter Your Name");
+            string First_name = Console.ReadLine();
+            Console.WriteLine("Enter Your Last Name");
+            string Last_Name = Console.ReadLine();
+            Console.WriteLine("Full Name : {0} {1}", First_name, Last_Name);
+
+
+        }
+    }
+}

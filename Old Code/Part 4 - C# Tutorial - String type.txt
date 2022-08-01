@@ -1,0 +1,18 @@
+using System;
+
+namespace C_Sharpe_Project_Practice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // string Name = "Sandip";
+            // string Name = "\"Sandip\"";
+            // string Name = "One\\nTwo\\nThree";
+            string Name = @"E:\C# Code";
+            Console.WriteLine(Name);
+
+
+        }
+    }
+}
